@@ -1,4 +1,111 @@
-🎬 MovieTime - Smart Movie Booking SystemMovieTime is a full-stack movie ticket booking application built with Next.js and MySQL. It features real-time seat availability, dynamic pricing, and an intelligent chatbot assistant.🚀 Features🎥 Browse Movies: View currently showing movies with details like genre, duration, and ratings.🎫 Dynamic Booking: Real-time seat selection with different price tiers (Morning ₹150 / Evening ₹250 / Night ₹350).🤖 AI Chatbot: A smart assistant (available in bottom-right) that answers queries about shows, prices, and offers using SQL-based logic.🔐 User Accounts: Sign up, Login, and "My Bookings" history.⚡ Admin Panel: Special dashboard for Admins to add movies and view booking stats.📱 Responsive Design: Works perfectly on Desktop and Mobile (built with Tailwind CSS).🛠️ Tech StackFrontend: Next.js (React), Tailwind CSSBackend: Next.js API Routes (Node.js)Database: MySQL (Compatible with Local MySQL & TiDB Cloud)Authentication: Custom JWT / Session-based (via Database)Deployment: Vercel (Frontend/API) + TiDB Serverless (Database)🏗️ Database SchemaThe system uses a relational database with the following structure:Movies: Stores movie details (Title, Genre, Poster).Theatres & Screens: Manages locations and screen capacity.ShowTable: Links Movies to Screens with specific Dates/Times & Prices.Bookings: Tracks customer reservations.Customers: User data and Admin roles.(See setup_database.sql in the repo for the full schema)⚙️ Local Installation GuideFollow these steps to run the project on your laptop.1. PrerequisitesNode.js installed.MySQL Server (Workbench) installed and running.2. Clone the RepositoryBashgit clone https://github.com/YOUR_USERNAME/movie-booking.git
+# 🎬 MovieTime - Smart Movie Booking System
+
+**MovieTime** is a full-stack movie ticket booking application built with **Next.js** and **MySQL**. It features real-time seat availability, dynamic pricing, and an intelligent chatbot assistant.
+
+![Project Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
+## 🚀 Features
+
+* **🎥 Browse Movies:** View currently showing movies with details like genre, duration, and ratings.
+* **🎫 Dynamic Booking:** Real-time seat selection with different price tiers (Morning ₹150 / Evening ₹250 / Night ₹350).
+* **🤖 AI Chatbot:** A smart assistant (available in bottom-right) that answers queries about shows, prices, and offers using SQL-based logic.
+* **🔐 User Accounts:** Sign up, Login, and "My Bookings" history.
+* **⚡ Admin Panel:** Special dashboard for Admins to add movies and view booking stats.
+* **📱 Responsive Design:** Works perfectly on Desktop and Mobile (built with Tailwind CSS).
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Next.js (React), Tailwind CSS
+* **Backend:** Next.js API Routes (Node.js)
+* **Database:** MySQL (Compatible with Local MySQL & TiDB Cloud)
+* **Authentication:** Custom JWT / Session-based (via Database)
+* **Deployment:** Vercel (Frontend/API) + TiDB Serverless (Database)
+
+---
+
+## 🏗️ Database Schema
+
+The system uses a relational database with the following structure:
+
+* **Movies:** Stores movie details (Title, Genre, Poster).
+* **Theatres & Screens:** Manages locations and screen capacity.
+* **ShowTable:** Links Movies to Screens with specific Dates/Times & Prices.
+* **Bookings:** Tracks customer reservations.
+* **Customers:** User data and Admin roles.
+
+*(See `setup_database.sql` in the repo for the full schema)*
+
+---
+
+## ⚙️ Local Installation Guide
+
+Follow these steps to run the project on your laptop.
+
+### 1. Prerequisites
+* Node.js installed.
+* MySQL Server (Workbench) installed and running.
+
+### 2. Clone the Repository
+```bash
+git clone [https://github.com/YOUR_USERNAME/movie-booking.git](https://github.com/YOUR_USERNAME/movie-booking.git)
+cd movie-booking
+
+3. Install Dependencies
+Bash
+
+npm install
+Here is the complete README.md file in a single code block, ready to copy and paste.Markdown# 🎬 MovieTime - Smart Movie Booking System
+
+**MovieTime** is a full-stack movie ticket booking application built with **Next.js** and **MySQL**. It features real-time seat availability, dynamic pricing, and an intelligent chatbot assistant.
+
+![Project Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
+## 🚀 Features
+
+* **🎥 Browse Movies:** View currently showing movies with details like genre, duration, and ratings.
+* **🎫 Dynamic Booking:** Real-time seat selection with different price tiers (Morning ₹150 / Evening ₹250 / Night ₹350).
+* **🤖 AI Chatbot:** A smart assistant (available in bottom-right) that answers queries about shows, prices, and offers using SQL-based logic.
+* **🔐 User Accounts:** Sign up, Login, and "My Bookings" history.
+* **⚡ Admin Panel:** Special dashboard for Admins to add movies and view booking stats.
+* **📱 Responsive Design:** Works perfectly on Desktop and Mobile (built with Tailwind CSS).
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Next.js (React), Tailwind CSS
+* **Backend:** Next.js API Routes (Node.js)
+* **Database:** MySQL (Compatible with Local MySQL & TiDB Cloud)
+* **Authentication:** Custom JWT / Session-based (via Database)
+* **Deployment:** Vercel (Frontend/API) + TiDB Serverless (Database)
+
+---
+
+## 🏗️ Database Schema
+
+The system uses a relational database with the following structure:
+
+* **Movies:** Stores movie details (Title, Genre, Poster).
+* **Theatres & Screens:** Manages locations and screen capacity.
+* **ShowTable:** Links Movies to Screens with specific Dates/Times & Prices.
+* **Bookings:** Tracks customer reservations.
+* **Customers:** User data and Admin roles.
+
+*(See `setup_database.sql` in the repo for the full schema)*
+
+---
+
+## ⚙️ Local Installation Guide
+
+Follow these steps to run the project on your laptop.
+
+### 1. Prerequisites
+* Node.js installed.
+* MySQL Server (Workbench) installed and running.
+
+### 2. Clone the Repository
+```bash
+git clone [https://github.com/YOUR_USERNAME/movie-booking.git](https://github.com/YOUR_USERNAME/movie-booking.git)
 cd movie-booking
 3. Install DependenciesBashnpm install
 4. Setup DatabaseOpen MySQL Workbench.Create a new connection/query tab.Copy the code from setup_database.sql (included in this repo).Run the script to create the database and dummy data.5. Configure ConnectionOpen lib/db.js and update your MySQL credentials:JavaScriptconst pool = mysql.createPool({
