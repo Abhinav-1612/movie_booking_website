@@ -37,7 +37,56 @@ The system uses a relational database with the following structure:
 *(See `setup_database.sql` in the repo for the full schema)*
 
 ---
+## 📊 Entity Relationship (ER) Diagram
 
+```mermaid
+erDiagram
+    MOVIES ||--o{ SHOWTABLE : "shown in"
+    THEATRES ||--o{ SCREENS : "has"
+    SCREENS ||--o{ SHOWTABLE : "hosts"
+    CUSTOMERS ||--o{ BOOKINGS : "makes"
+    SHOWTABLE ||--o{ BOOKINGS : "receives"
+
+    MOVIES {
+        int Movie_ID PK
+        string Title
+        string Genre
+        int Duration
+        string Image_Path
+    }
+    THEATRES {
+        int Theatre_ID PK
+        string Theatre_Name
+        string Location
+    }
+    SCREENS {
+        int Screen_ID PK
+        int Theatre_ID FK
+        int Total_Seats
+    }
+    SHOWTABLE {
+        int Show_ID PK
+        int Movie_ID FK
+        int Screen_ID FK
+        date Show_Date
+        time Show_Time
+        int Price
+    }
+    CUSTOMERS {
+        int Cust_ID PK
+        string Name
+        string Email
+        string Phone
+        string Password
+        string Role
+    }
+    BOOKINGS {
+        int Booking_ID PK
+        int Cust_ID FK
+        int Show_ID FK
+        int Seats_Booked
+        date Booking_Date
+    }
 ## ⚙️ Local Installation Guide
 
 Follow these steps to run the project on your laptop.
