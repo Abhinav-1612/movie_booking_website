@@ -39,7 +39,7 @@ The system uses a relational database with the following structure:
 ---
 ## 📊 Entity Relationship (ER) Diagram
 
-```mermaid
+``` mermaid
 erDiagram
     MOVIES ||--o{ SHOWTABLE : "shown in"
     THEATRES ||--o{ SCREENS : "has"
@@ -87,6 +87,7 @@ erDiagram
         int Seats_Booked
         date Booking_Date
     }
+
 ## ⚙️ Local Installation Guide
 
 Follow these steps to run the project on your laptop.
